@@ -390,7 +390,11 @@ button {
     'github github';
   grid-gap: 1rem;
 }
-
+.dashboardPost {
+  display: grid;
+  grid-template-areas: 'exp dpost';
+  grid-gap: 0rem;
+}
 .profile-top {
   grid-area: top;
   display: flex;
@@ -431,6 +435,9 @@ button {
 
 .profile-edu {
   grid-area: edu;
+}
+.profile-dpost {
+  grid-area: dpost;
 }
 
 .profile-exp h2,

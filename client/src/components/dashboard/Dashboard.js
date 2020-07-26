@@ -49,11 +49,14 @@ const Dashboard = ({
             </div>
 
             <div className='profile-grid my-1'>
-              <div className='profile-exp bg-white' style={{ padding: '10px' }}>
-                <Experience experience={profile.experience} />
-              </div>{' '}
               <div
-                className='profile-edu bg-white '
+                className='.profile-exp bg-white'
+                style={{ padding: '10px' }}
+              >
+                <Experience experience={profile.experience} />{' '}
+              </div>
+              <div
+                className='.profile-edu bg-white'
                 style={{ padding: '10px' }}
               >
                 <Education education={profile.education} />
