@@ -34,7 +34,7 @@ const Dashboard = ({
           {profile !== null ? (
             <img
               className='round-img my-1'
-              style={{ width: '150px', borderRadius: '150%' }}
+              style={{ width: '200px', borderRadius: '150%' }}
               src={
                 profile.images.picture ? profile.images.picture : user.avatar
               }

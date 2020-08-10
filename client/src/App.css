@@ -36,11 +36,12 @@ img {
 
 /* Utilities */
 .container {
-  max-width: 1100px;
+  max-width: 98%;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
   margin-top: 6rem;
+  margin-left: 1rem;
   margin-bottom: 3rem;
 }
 
