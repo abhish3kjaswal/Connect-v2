@@ -144,6 +144,20 @@ const CreateProfile = ({ createProfile, history }) => {
           ></textarea>
           <small className='form-text'>Tell us a little about yourself</small>
         </div>
+        <div className='form-group'>
+          <Link
+            className='btn btn-dark'
+            style={{
+              color: 'white',
+              border: '1px solid',
+              borderColor: 'white',
+              padding: '5px',
+            }}
+            to='/upload-images'
+          >
+            Update Picture
+          </Link>
+        </div>
 
         <div className='my-2'>
           <button

@@ -27,17 +27,45 @@ const Dashboard = ({
           <i class='fa fa-user-circle' aria-hidden='true'></i> Dashboard
         </h1>
 
-        <div className='profile-top bg-primary p-2'>
-          <img
-            className='round-img my-1'
-            style={{ width: '150px' }}
-            src={user && user.avatar}
-            alt='user snap...'
-          />
+        <div
+          className='profile-top bg-primary p-2'
+          style={{ marginBottom: '5px' }}
+        >
+          {profile !== null ? (
+            <img
+              className='round-img my-1'
+              style={{ width: '150px', borderRadius: '150%' }}
+              src={
+                profile.images.picture ? profile.images.picture : user.avatar
+              }
+              alt='user display picture...'
+            />
+          ) : (
+            <img
+              className='round-img my-1'
+              style={{ width: '150px' }}
+              src={user && user.avatar}
+              alt='user snap...'
+            />
+          )}
           {'      '}
           <p className='lead'>
             <b>WELCOME {user && user.name.toUpperCase()}</b>
           </p>
+          {profile !== null && (
+            <p>
+              <Link
+                className='btn btn-dark'
+                style={{
+                  color: 'white',
+                  padding: '5px',
+                }}
+                to='/upload-images'
+              >
+                Update Picture
+              </Link>
+            </p>
+          )}
         </div>
         {profile !== null ? (
           <Fragment>
@@ -48,18 +76,24 @@ const Dashboard = ({
               <PostForm></PostForm>
             </div>
 
-            <div className='profile-grid my-1'>
+            <div className='profile-grid my-1 wrap-post '>
               <div
-                className='.profile-exp bg-white'
+                className='.profile-exp bg-white wrap-post'
                 style={{ padding: '10px' }}
               >
-                <Experience experience={profile.experience} />{' '}
+                <Experience
+                  className='wrap-post'
+                  experience={profile.experience}
+                />{' '}
               </div>
               <div
-                className='.profile-edu bg-white'
+                className='.profile-edu bg-white wrap-post'
                 style={{ padding: '10px' }}
               >
-                <Education education={profile.education} />
+                <Education
+                  className='wrap-post'
+                  education={profile.education}
+                />
               </div>
             </div>
           </Fragment>

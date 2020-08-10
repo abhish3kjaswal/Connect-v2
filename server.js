@@ -3,9 +3,15 @@ const express = require('express');
 const connectDB = require('./config/db');
 
 const app = express();
+var cors = require('cors');
 
 const mongoose = require('mongoose');
+
 const path = require('path');
+
+//cloudinary
+app.use(cors());
+app.options('*', cors());
 
 //connect database
 connectDB();

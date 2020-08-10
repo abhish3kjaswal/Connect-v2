@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import ProfileTop from './ProfileTop';
 import ProfileExperience from './ProfileExperience';
 import ProfileEducation from './ProfileEducation';
+import Message from '../messages/Message';
 import ProfileAbout from './ProfileAbout';
 import ProfileGithub from './ProfileGithub';
 
@@ -34,6 +35,13 @@ const Profile = ({
             auth.user._id === profile.user._id && (
               <Link to='/edit-profile' className='btn btn-dark'>
                 Edit profile
+              </Link>
+            )}
+          {auth.isAuthenticated &&
+            auth.loading === false &&
+            auth.user._id !== profile.user._id && (
+              <Link to='/message' className='btn btn-green'>
+                Message
               </Link>
             )}
           <div class='profile-grid my-1'>

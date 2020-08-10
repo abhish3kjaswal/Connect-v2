@@ -19,6 +19,15 @@ const Profile = require('../../models/Profile');
 
 const Post = require('../../models/Post');
 
+const cloudinary = require('cloudinary');
+
+//cloudinary middleware
+cloudinary.config({
+  cloud_name: config.get('cloud_name'),
+  api_key: config.get('api_key'),
+  api_secret: config.get('api_secret'),
+});
+
 const request = require('request');
 const { response } = require('express');
 
@@ -397,6 +406,25 @@ router.get('/github/:username', async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).send('server error');
+  }
+});
+
+//@route POST api/profile/avatar
+//@desc upload avatar for profile
+//@access private
+
+router.post('/avatar', auth, async (req, res) => {
+  try {
+    // console.log("server: req.body:  ", req.body);
+    let profile = await Profile.findOne({ user: req.user.id });
+    //    let posts = await Post.find({ user: req.user.id });
+    profile.images.picture = req.body.picture;
+    await profile.save();
+    //console.log("changed profile:", profile);
+    return res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
   }
 });
 

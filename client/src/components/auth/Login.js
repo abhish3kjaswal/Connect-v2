@@ -39,7 +39,6 @@ const Login = ({ login, isAuthenticated }) => {
             placeholder='Email Address'
             name='email'
             value={email}
-            autoComplete='off'
             onChange={(e) => onChange(e)}
             required
           />

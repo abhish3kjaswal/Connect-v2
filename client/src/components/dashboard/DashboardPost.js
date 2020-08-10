@@ -23,10 +23,14 @@ const DashboardPost = ({
   const myposts = posts.map((post) => (
     <div key={post._id} class='post bg-white p-1 my-1'>
       <div>
-        <img class='round-img' src={post.avatar} alt='' />
+        <img
+          class='round-img'
+          src={post.picture ? post.picture : post.avatar}
+          alt=''
+        />
         <h4>{post.name}</h4>
       </div>
-      <div class='wrap-post'>
+      <div class='wrap-post' style={{ padding: '5px' }}>
         <p class='my-1 wrap-post'>{post.text}</p>
         <p class='post-date'>
           Posted on <Moment format='DD/MM/YYYY'>{post.date}</Moment>
@@ -37,6 +41,9 @@ const DashboardPost = ({
               onClick={(e) => addLike(post._id)}
               type='button'
               class='btn btn-light'
+              style={{
+                padding: '5px',
+              }}
             >
               <i class='fas fa-thumbs-up'></i>{' '}
               <span>

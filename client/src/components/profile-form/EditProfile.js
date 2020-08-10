@@ -174,7 +174,21 @@ const EditProfile = ({
           ></textarea>
           <small className='form-text'>Update your Bio</small>
         </div>
-
+        <div className='form-group'>
+          <Link
+            className='btn btn-grey'
+            style={{
+              color: 'black',
+              border: '1px solid',
+              borderColor: 'white',
+              padding: '10px',
+            }}
+            to='/upload-images'
+          >
+            Update Picture
+          </Link>
+          <span>Optional</span>
+        </div>
         <div className='my-2'>
           <button
             onClick={() => toggleSocialInputs(!displaySocialInputs)}

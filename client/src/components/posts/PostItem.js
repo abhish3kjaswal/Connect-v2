@@ -10,18 +10,18 @@ const PostItem = ({
   addLike,
   removeLike,
   deletePost,
-  post: { _id, text, name, avatar, user, likes, comments, date },
+  post: { _id, text, name, avatar, user, likes, comments, date, picture },
   showActions,
 }) => {
   return (
     <div class='post bg-white p-1 my-1'>
       <div>
         <Link to={`/profile/${user}`}>
-          <img class='round-img' src={avatar} alt='' />
+          <img class='round-img' src={picture ? picture : avatar} alt='' />
           <h4>{name}</h4>
         </Link>
       </div>
-      <div class='wrap-post'>
+      <div class='wrap-post' style={{ padding: '5px' }}>
         <p class='my-1 wrap-post'>{text}</p>
         <p class='post-date'>
           Posted on <Moment format='DD/MM/YYYY'>{date}</Moment>

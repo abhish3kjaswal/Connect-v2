@@ -7,7 +7,7 @@ import { deleteComment } from '../../action/post';
 
 const CommentItem = ({
   postId,
-  comment: { _id, text, name, avatar, user, date },
+  comment: { _id, text, name, avatar, user, date, picture },
   auth,
   deleteComment,
 }) => {
@@ -15,7 +15,7 @@ const CommentItem = ({
     <div class='post bg-white p-1 my-1'>
       <div>
         <Link to={`/profile/${user}`}>
-          <img class='round-img' src={avatar} alt='' />
+          <img class='round-img' src={picture ? picture : avatar} alt='' />
           <h4>{name}</h4>
         </Link>
       </div>

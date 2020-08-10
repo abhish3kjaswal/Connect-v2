@@ -20,6 +20,12 @@ const navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </Link>
       </li>
       <li>
+        <Link to='/my-messages'>
+          <i class='fa fa-envelope-o' aria-hidden='true' />{' '}
+          <span className='hide-sm'>Mailbox</span>
+        </Link>
+      </li>
+      <li>
         <Link to='/dashboard'>
           <i className='fas fa-user' />{' '}
           <span className='hide-sm'>Dashboard</span>

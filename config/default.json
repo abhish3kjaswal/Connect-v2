@@ -2,5 +2,8 @@
   "mongodbURI": "mongodb+srv://abhishek:12345@practice.dssxg.mongodb.net/practice?retryWrites=true&w=majority",
   "jwtSecret": "myjwtsecret",
   "githubClientId": "78a180f366c08c51561c",
-  "githubSecret": "cf208a4cf0afe1dd6f40d61b3f840d628bf60deb"
+  "githubSecret": "cf208a4cf0afe1dd6f40d61b3f840d628bf60deb",
+  "cloud_name": "mylibrary12345",
+  "api_key": "418387115111856",
+  "api_secret": "ZeuhE7ElWX1xwuMmTaa-KzCnIhI"
 }
