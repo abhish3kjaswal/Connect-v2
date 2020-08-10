@@ -30,7 +30,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const Routes = () => {
   return (
-    <section className='container'>
+    <section className='container' style={{ paddingTop: '5px' }}>
       <Alert />
       <Switch>
         <Route exact path='/register' component={Register} />
